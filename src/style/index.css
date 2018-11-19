@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Tenor+Sans');
+body {
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #707070
+}
+
+a:hover {
+    color: #000
+}
+
+.menu {
+    width: 100%;
+    margin-top: 28px;
+    font-family: 'Open Sans', sans-serif;
+    align-items: center;
+    padding-bottom: 28px
+}
+
+.menu a {
+    display: inline-block;
+    width: 10%;
+    border-left: 1px solid black;
+    font-size: 20px;
+    text-align: center
+}
+
+.menu.login a:first-child{
+    margin-left: 75%
+}
+
+.menu.application{
+    border-bottom: 1px solid black
+}
+
+.menu.application a{
+    width: 17%
+}
+
+.menu.application a:first-child{
+    margin-left: 31%
+}
+
+.would-you-rather{
+    height: 720px;
+    width: 1280px;
+    margin: 0 auto;
+    background: url('../images/maxresdefault.jpg')                  
+}
+
+input[type=text], select {
+    margin-top: 5px;
+    outline: none;
+    width: 84%;
+    padding: 15px;
+    font-family: 'Tenor Sans', sans-serif;
+    border-radius: 10px;
+    border: 1px solid black
+}
+
+.registration-box{
+    width: 200px;
+    margin: 50px auto;
+    border: 1px solid black;
+    padding: 50px
+}
+
+.submit-button {
+    margin-top: 50px;
+    background: #FFFFFF;
+    color:black;
+    font-weight: 800;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    font-family: 'Open Sans', sans-serif;    
+    border: 1px solid black;
+}
+
+.avatar{
+    height: 75px;
+    border: 1px solid black;
+}
+
+.greeting-user{
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+}
+
+.greeting-user span{
+    position: relative;
+    bottom: 32px;
+    font-size: 25px;
+    left: 25px;
+}
+
+.questions-panel{
+    width: 70%;
+    margin: 40px auto
+}
+
+.tabs{
+    height: 30px;   
+}
+
+.tabs div:hover, .active-link{
+    text-decoration: none;
+    background: #fff;
+    background: -moz-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));
+    background: -webkit-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -o-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -ms-linear-gradient(top,#fff 0,#ddd 100%);
+    background: linear-gradient(top,#fff 0,#ddd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
+}
+
+.tabs div{
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 45px;
+    border: 1px solid #ddd;       
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; 
+}
+
+.questions{
+    background: #CCC;
+    border: 1px solid #ddd;
+    border-top: none;
+    margin-top: 5px;
+    padding: 25px 35px
+}
+
+.options{
+    width: 97%;
+    display: inline-block;
+    padding: 0 0 1em 20px;
+    margin: 30px 0;
+    border: 3px solid #FFFFFF;
+}
+
+.options .avatar{
+    margin-top: 10px
+}
+
+.options p{
+    font-size: 20px;
+}
+
+.optDetails{
+    padding-left: 20px;
+    display: inline-block;
+    width:88%; 
+}
+.opt{
+    display: inline-block;
+    width:48%;    
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center;
+    background: white
+}
+
+.opt:hover{
+    background: #CCC
+}
+
+.selected, .selected:hover {
+    background-image: url('../images/selected.png');
+    background-position: 25px center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+}
+
+.more, button[type=submit]{
+    padding: 10px 15px;
+    width: 75px;
+    float: right;
+    margin-right: 35px;
+    margin-top: 15px;
+    background: #fff;
+    background: -moz-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));
+    background: -webkit-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -o-linear-gradient(top,#fff 0,#ddd 100%);
+    background: -ms-linear-gradient(top,#fff 0,#ddd 100%);
+    background: linear-gradient(top,#fff 0,#ddd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
+    color: #707070
+}
+
+button[type=submit]:hover{
+    color: black;
+}
+
+.poll, .create-question{
+    width: 60%;
+    margin: 30px auto;
+    border: 3px solid #ccc;
+    padding: 20px
+}
+
+.poll .optDetails{
+    width:70%
+}
+.poll .opt{
+    display: block;
+    margin-top: 30px;
+    border: none;
+    text-align: left; 
+    padding-left: 36px;
+    border: 1px solid #ddd
+}
+
+.poll .opt.selected{
+    background-position: 0px 8px;
+}
+
+.poll .opt:hover{
+    background: none
+}
+
+.poll p{
+    font-size: 20px
+}
+
+.poll .avatar{
+    height: 140px;
+    margin: 0;
+    position: relative;
+    top: -175px
+}
+
+.progressbar{
+    border:1px solid black;
+    margin: 10px 0
+}
+
+.progressbar div{
+    text-align: center;
+    background: #ddd;
+    border:1px solid #ccc;
+}
+
+.create-question input[type=text]{
+    margin-left: 10px;
+    margin-bottom: 40px
+}
+
+.create-question button{
+    border: 1px solid #ddd;
+    font-size: 18px;
+    width: 100px;
+    position: relative;
+    left: 782px;
+    top: -18px;
+    float: none
+}
+
+.create-question p{
+    font-size: 20px
+}
+
+.leader-board .avatar{
+    height: 100px;
+    position: relative;
+    top: 20px;
+    left: 64px;
+}
+
+.leader-board p{
+    margin: 0 0 5px 0;
+}
+
+.leader-board li p:first-child{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.leader-board ul li{
+    list-style: none;
+    display: block;
+    padding-bottom: 30px;
+    border: 2px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.leader-board ul li .user-details{
+    width: 40%;
+    display: inline-block;
+    margin-left: 135px;
+    border-left: 1px solid #ddd;
+    padding-left: 48px;
+}
+
+.leader-board ul li .score{
+    display: inline-block;
+    border-left: 1px solid #ddd;
+    position: relative;
+    padding-left: 40px;
+    top: -14px;
+}
+
+.leader-board ul li .score span{
+    display: inline-block;
+    height: 30px;
+    width: 38px;
+    background: #ddd;
+    text-align: center;
+    padding-top: 8px;
+    position: relative;
+    left: 10px;
+}
+
+.registration-box button{
+    float: none;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    width: 100%;
+}
+
+.registration-box .input-field{
+    margin-bottom: 15px
+}
+
+.login-section select{
+    width: 100%
+}
+
+.leader-board{
+    width: 60%;
+    margin: 0 auto
+}
