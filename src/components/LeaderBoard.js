@@ -8,7 +8,7 @@ class LeaderBoard extends Component{
         const { login, usersData} = this.props
 
         if (login === null) {
-            return <Redirect to='/login' />
+            return <Redirect to={{pathname: '/login', state: {redirectUrl: this.props.location.pathname}}} />
         }
 
         return(

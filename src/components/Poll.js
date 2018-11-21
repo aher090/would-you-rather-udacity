@@ -13,6 +13,18 @@ class Poll extends Component{
             answer: this.props.userSelectedAnswer
         }
     }
+
+    selectAnswer(selectedOption) {
+        const { dispatch, login, question } = this.props        
+        if (selectedOption === 1) {
+            dispatch(handleAnswer(login, question.id, 'optionOne'))
+            this.setState({ answer: 'optionOne' })
+        } else if (selectedOption === 2) {
+            dispatch(handleAnswer(login, question.id, 'optionTwo'))
+            this.setState({ answer: 'optionTwo' })
+        }
+    }
+
     render(){
         const { 
                     login, 
@@ -24,7 +36,16 @@ class Poll extends Component{
                     author,
                     votesOpt1,
                     votesOpt2
-                } = this.props
+                } = this.props        
+
+        if (login === null) {
+            return <Redirect to={{pathname: '/login', state: {redirectUrl: this.props.location.pathname}}} />
+        }
+
+        if(!question){
+            return <Redirect to='/page404' />
+        }
+
         const { avatarURL, name } = author
         let styleClass = []
         if (userSelectedAnswer){
@@ -36,10 +57,6 @@ class Poll extends Component{
         } else{
             styleClass = ['opt option-one', 'opt option-two']
         }
-
-        if (login === null) {
-            return <Redirect to='/login' />
-        }
         
         return(
             <div>
@@ -49,12 +66,12 @@ class Poll extends Component{
                     <div className="optDetails">
                         <p>{name} asks, would you rather!</p>
                         <span>Posted {moment(question.timestamp).fromNow()}</span>
-                        <div className={styleClass[0]} >{question.optionOne.text}</div>
+                        <div className={styleClass[0]} onClick={() => this.selectAnswer(1)}>{question.optionOne.text}</div>
                         <div className="progressbar">
                             <div style={{ width: `${percFist}%` }}>{`${percFist}%`}</div>
                         </div>                        
                         <span>{votesOpt1} out of {total}</span>
-                        <div className={styleClass[1]} >{question.optionTwo.text}</div>
+                        <div className={styleClass[1]} onClick={() => this.selectAnswer(2)}>{question.optionTwo.text}</div>
                         <div className="progressbar">
                             <div style={{ width: `${percSecond}%` }}>{`${percSecond}%`}</div>
                         </div>                        
@@ -71,7 +88,7 @@ class Poll extends Component{
 function mapStateToProps ({ login, questions, users }, { match }) {
     let question = questions[match.params.question_id]
     let userSelectedAnswer, percFist, percSecond, total, author, votesOpt1, votesOpt2
-    if (null !== login) {
+    if (null !== login && question) {
         const answers = users[login].answers
         if (answers.hasOwnProperty(question.id)) {
             userSelectedAnswer = answers[question.id]

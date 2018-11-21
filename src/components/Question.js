@@ -54,8 +54,10 @@ class Question extends Component{
                         <p>{name} asks, would you rather!</p>
                         <div className={styleClass[0]} onClick={() => this.selectAnswer(1)}>{question.optionOne.text}</div>
                         <div className={styleClass[1]} onClick={() => this.selectAnswer(2)}>{question.optionTwo.text}</div>
-                    </div>                    
-                    <Link to={`/question/${question.id}`} className="more">View poll</Link>
+                    </div> 
+                    {                   
+                        answer && <Link to={`/question/${question.id}`} className="more">View poll</Link>
+                    }
                 </div>
             </div>
         )

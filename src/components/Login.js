@@ -9,7 +9,6 @@ class Login extends Component{
         super(props)
         this.state = {
             login: false,
-            redirect: false,
             userNotFound: false
         }
         this.handleLogin = this.handleLogin.bind(this)
@@ -33,10 +32,13 @@ class Login extends Component{
     }
 
     render() {
-    const { login, redirect, userNotFound} = this.state
-    const { auth, users } = this.props
+    const { userNotFound} = this.state
+    const { login, users, location } = this.props
 
-    if (redirect || auth != null) {
+    if (login != null) {
+        if(location && location.state && location.state.redirectUrl){
+            return <Redirect to={location.state.redirectUrl} />
+        }
         return <Redirect to='/home' />
     }
 
@@ -64,11 +66,11 @@ class Login extends Component{
     }
 }
 
-function mapStateToProps ({ users, auth }) {
+function mapStateToProps ({ users, login }) {
     const usersProp = Object.keys(users)
     return {
         users: usersProp,
-        auth
+        login
     }
 }
 

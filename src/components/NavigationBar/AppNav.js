@@ -9,7 +9,7 @@ class AppNav extends Component{
                 <Link to='/home' style={{ background: `${activeTab.includes('home') ? '#ddd' : 'none'}` }}>Would You Rather?</Link>
                 <Link to='/add' style={{ background: `${activeTab.includes('create') ? '#ddd' : 'none'}` }}>Create a question</Link>
                 <Link to='/leaderboard' style={{ background: `${activeTab.includes('leaderBoard') ? '#ddd' : 'none'}` }}>Leader Board</Link>
-                <Link to='/login' style={{ background: `${activeTab.includes('login') ? '#ddd' : 'none'}` }}>Logout</Link>
+                <Link to='/logout' style={{ background: `${activeTab.includes('login') ? '#ddd' : 'none'}` }}>Logout</Link>
             </div>
         )
     }

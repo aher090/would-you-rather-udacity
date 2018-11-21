@@ -9,6 +9,8 @@ import Home from './Home'
 import Poll from './Poll'
 import CreateQuestion from './CreateQuestion'
 import LeaderBoard from './LeaderBoard'
+import Page404 from './Page404';
+import Logout from './Logout';
 
 class App extends Component {
     componentDidMount () {
@@ -25,6 +27,8 @@ class App extends Component {
             <Route exact path='/question/:question_id' component={Poll} />
             <Route exact path='/add' component={CreateQuestion} />
             <Route exact path='/leaderboard' component={LeaderBoard} />
+            <Route exact path='/page404' component={Page404} />
+            <Route exact path='/logout' component={Logout} />
             </div>
         </div>
         )

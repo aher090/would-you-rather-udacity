@@ -51,6 +51,19 @@ a:hover {
     background: url('../images/maxresdefault.jpg')                  
 }
 
+.page-404{        
+    height: 400px;
+    width: 415px;
+    margin: 0 auto;
+    background: url('../images/404.png') no-repeat 0 80px;
+    text-align: center
+}
+
+.page-404 a{
+    font-size: 25px;
+    
+}
+
 input[type=text], select {
     margin-top: 5px;
     outline: none;
@@ -221,10 +234,6 @@ button[type=submit]:hover{
     background-position: 0px 8px;
 }
 
-.poll .opt:hover{
-    background: none
-}
-
 .poll p{
     font-size: 20px
 }
@@ -336,4 +345,8 @@ button[type=submit]:hover{
 .leader-board{
     width: 60%;
     margin: 0 auto
+}
+
+.error{
+    color: red;
 }
