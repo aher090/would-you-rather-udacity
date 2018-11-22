@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'http://ingeus.com.sg/wp-content/uploads/2017/10/buyer-persona-image4.png',
+    avatarURL: 'https://www.vbout.com/images/persona/buyer-persona-image4.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',

@@ -8,7 +8,8 @@ class Question extends Component{
     constructor (props){
         super(props)
         this.state = {
-            answer: this.props.answer
+            answer: this.props.answer,
+            redirectToDetails: false
         }
         this.selectAnswer = this.selectAnswer.bind(this)
         this.getQuestionAuthorDetails = this.getQuestionAuthorDetails.bind(this)
@@ -19,10 +20,10 @@ class Question extends Component{
         if (!this.state.answer) {
             if (selectedOption === 1) {
                 dispatch(handleAnswer(login, question.id, 'optionOne'))
-                this.setState({ answer: 'optionOne' })
+                this.setState({ answer: 'optionOne' ,  redirectToDetails: true})
             } else if (selectedOption === 2) {
                 dispatch(handleAnswer(login, question.id, 'optionTwo'))
-                this.setState({ answer: 'optionTwo' })
+                this.setState({ answer: 'optionTwo' ,  redirectToDetails: true})
             }
         }
     }
@@ -32,8 +33,11 @@ class Question extends Component{
     }
 
     render () {
-        const { question, users } = this.props
-        const { answer } = this.state
+        const { question, users } = this.props              
+        const { answer,  redirectToDetails} = this.state  
+        if (redirectToDetails) {
+            return <Redirect to={`/question/${question.id}`} />
+        }
         const authorDetails = this.getQuestionAuthorDetails(users, question.author)
         const { avatarURL, name } = authorDetails
         let styleClass = []
